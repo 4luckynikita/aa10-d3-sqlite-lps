@@ -152,3 +152,6 @@ INSERT INTO coffee_orders
 DEFAULT VALUES;
 
 -- EVENT 12
+SELECT points
+from customers
+WHERE name="Ross"
