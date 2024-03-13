@@ -1,1 +1,18 @@
--- Your code here 
+-- Your code here
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS coffee_orders;
+
+CREATE TABLE customers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(40),
+    phone DECIMAL(10, 10) UNIQUE,
+    email VARCHAR UNIQUE,
+    points INTEGER DEFAULT(5) NOT NULL,
+    created_at TIMESTAMP DEFAULT(CURRENT_TIMESTAMP) NOT NULL
+);
+
+CREATE TABLE coffee_orders (
+    id INTEGER  PRIMARY KEY AUTOINCREMENT,
+    is_redeemed BOOLEAN DEFAULT(false),
+    ordered_at TIMESTAMP DEFAULT(CURRENT_TIMESTAMP) NOT NULL
+);
